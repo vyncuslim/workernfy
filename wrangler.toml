@@ -1,0 +1,18 @@
+name = "workernfy"
+main = "src/index.js"
+compatibility_date = "2026-10-23"
+workers_dev = true
+preview_urls = false
+
+[durable_objects]
+bindings = [
+  { name = "TOPIC_HUB", class_name = "TopicHub" }
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["TopicHub"]
+
+[observability]
+enabled = true
+head_sampling_rate = 0.2
